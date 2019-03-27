@@ -4,9 +4,6 @@
 
 ## Build Setup
 
-
-``` bash
-
 # 前置准备 安装npm和nodejs 并安装vue脚手架
 npm install --global vue-cli
 # 查看vue版本
