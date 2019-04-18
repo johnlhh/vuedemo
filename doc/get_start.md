@@ -1,6 +1,6 @@
 # 从创建到部署的 一个vuedemo
 
-> Vue Demo 
+> 从简单出发，循序渐进。学好vue并不难 
 
 ## Build Setup
 
@@ -29,20 +29,36 @@ npm run build --report
 - 假设项目访问地址为 http://vue.test.com/vuedemo/ 
 
 - host配置/etc/hosts
->  127.0.0.1	vue.test.com
+
+```
+127.0.0.1	vue.test.com
+```
 
 - nginx的配置 /usr/local/nginx/conf/nginx.conf 添加如下配置
 
->   server_name  vue.test.com
->
->   location /vuedemo {
->        try_files $uri $uri/ /vuedemo/index.html;
->    }
+    ```
+    server_name  vue.test.com
+    location /vuedemo {
+        try_files $uri $uri/ /vuedemo/index.html;
+    }
+    ```
+
 
 - 重启nginx 
 > sudo nginx -s reload
 
-- 修改构项目建配置 config/index.js build模块中的assetsPublicPath的值。设为 assetsPublicPath: '/vuedemo/'
+- 修改构项目建配置 config/index.js 
+> 把build模块中的assetsPublicPath的值改为 '/vuedemo/'
+  ```
+  build: {
+   ...
+
+   assetsPublicPath: '/vuedemo/',
+
+   ...
+
+  ```
+
 - 重新构建 npm run build 然后将构建文件即 项目目录dist中的文件copy到 nginx的 /usr/local/nginx/html/vuedemo中
 
 - 浏览器访问项目 http://vue.test.com/vuedemo/
@@ -57,4 +73,7 @@ npm run e2e
 # run all tests
 npm test
 
-```
+
+
+# 小结
+先了解vue项目从开发到部署的整个过程，这个时候不要着急编码，了解整个vue项目的流程很重要。
